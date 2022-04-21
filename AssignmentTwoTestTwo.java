@@ -51,6 +51,7 @@ public class AssignmentTwoTestTwo {
                 // String must contain ONLY "(" and ")"
                 parenthesisString = parenthesisString.replace("(", "");
                 parenthesisString = parenthesisString.replace(")", "");
+
                 if (parenthesisString.length() == 0) {
                     System.out.println("True");
                 } else {
