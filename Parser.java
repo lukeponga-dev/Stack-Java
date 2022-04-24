@@ -50,12 +50,12 @@ public class Parser {
      */
     public String getString() {
         String str = "(" + ")";
-        int n = 10;
+        int stringLength = 10;
 
         // create string buffer size of n
-        StringBuilder sb = new StringBuilder(n);
+        StringBuilder sb = new StringBuilder(stringLength);
 
-        for (int i = 0; i < n; i++) {
+        for (int i = 0; i < stringLength; i++) {
             // generate a random
             int index = (int) (str.length() * Math.random());
 
