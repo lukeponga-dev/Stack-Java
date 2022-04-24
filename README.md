@@ -25,7 +25,11 @@
    You may have additional member variables and methods if they are useful to you, but they should be private.
 ## Part Two
 
-### Create a new Java class called Parser in a file called Parser.java. In this file you are going to write a public method called check() which will use your Stack class to determine if a string is well-formatted with regards to its parentheses. For example, given the input:()(), your program should return “true” as there are the correct number of brackets. Alternatively, given the invalid input: ()((()(, your program should return “false” as there are the incorrect number of brackets.
+>Create a new Java class called Parser in a file called Parser.java. 
+>In this file you are going to write a public method called check() 
+>which will use your Stack class to determine if a string is well-formatted with regards to its parentheses. 
+>For example, given the input:()(), your program should return “true” as there are the correct number of brackets. 
+>Alternatively, given the invalid input: ()((()(, your program should return “false” as there are the incorrect number of brackets.
 <br>
 
 <p> In your Parser class write a private method called getString() which will generate random
