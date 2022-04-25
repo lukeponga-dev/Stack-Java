@@ -8,14 +8,16 @@
 public class Stack {
 
         // The head of the stack to be private
-        protected Node head;
-
+        private Node head;
+        
         /**
         * Stack constructor
         */
+
         public Stack() {
+
                 // Initialize head to empty
-                head = null;
+                head = null;  
         }
 
         /**
@@ -27,16 +29,16 @@ public class Stack {
                 
                 // create new node with values being x
                 Node newNode = new Node(x);
-                newNode.setValue(x);
-
+              
                 // push into an empty stack 
                 // else move stack down & point next newNode to head
                 if(isEmpty()){      
-                      head = newNode;
+                        head = newNode;
                 } else{  
-                      newNode.setNext(head);
-                      head = newNode;
+                        newNode.setNext(head);
+                        head = newNode;
                 }
+                return;
         }
 
         /**
@@ -45,42 +47,30 @@ public class Stack {
          * if stack is empty 
          * @return Stack Underflow
         */
-        public void pop() {
+        public int pop() {
 
                 // print underflow if empty stack  
                 if (isEmpty()) {
-                        System.out.print("\nStack Underflow");
-                        return;
-                }
+                        System.out.println("\nStack is empty");
+                        return -1;
+                 }
                 
                 // update the head to point to the next node
                 head = head.getNext();
+                return -1;
         }
 
         /**
          * peek()
-         * looks at the head node and
+         * looks at the head node.
          * @return the head value
         */
         public String peek() {
                 if (isEmpty()) {
-                        System.out.println("\nStack is empty");
-                        return null;
-                  } else {
-                        return head.getValue();
+                        return "\nEmpty Stack";
+                } else {
+                       return head.getValue();
                   }
-        }
-
-        /**
-         * isEmpty()
-         * if head is null the stack is empty,
-         * @return, true or false
-        */
-        public boolean isEmpty() {
-                if (head == null){
-                        return true;
-                }
-                return false;
         }
 
         /**
@@ -89,25 +79,44 @@ public class Stack {
          * @return, int length of items in stack
         */
         public int length() {
-                int count = 0;
                 Node currNode = head;
-                
-                // Traverse the stack & increment count by 1
+
+                // Initialises variable to keep count
+                int count = 0;
+
+                // loop to ilterate through the stack
                 while (currNode != null) {
-                              count ++;
-                              currNode = currNode.getNext();
+
+                        // increment 1 to count
+                        count ++;
+
+                        // move to next node
+                        currNode = currNode.getNext();
                 } 
+                // return count
                 return count;
+        }
+
+         /**
+         * isEmpty()
+         * true if length() is 0, false otherwise.
+         * @return, true or false
+        */
+        public boolean isEmpty() {
+                if (length() == 0){
+                        return true;
+                }
+                return false;
         }
 
         /**
          * dump()
-         * dump the items in stack
+         * prints out the strings in stack
         */
         public void dump() {
                Node currNode = head;
 
-                // Traverse through the stack
+                // loop to iterate through the stack
                 while (currNode != null) {
                             
                             // Print the data at current node
@@ -115,6 +124,6 @@ public class Stack {
 
                             // go to the next node
                             currNode = currNode.getNext();
-                  }
+                }
         }
 }

@@ -1,40 +1,59 @@
 public class Node {
 
-    // Variables
+        // variables
 
-    /**
-     * variable values
-     * to hold the string value
-     */
-    private String value;
+        /** Private Variables
+         *  String value to hold the string value
+         *  Node next to hold a link to another Node
+         */
+        private String value;
+        private Node next;
 
-    /**
-     * variable next
-     * pointing to hold a link to next node
-     */
-    private Node next;
+        // Node Constructor
 
-    // Constructor
-    public Node(String x) {
-        setValue(x);
-        setNext(null);
+        /** Node(String x)
+         * takes value as a string argument and
+         * copies that value into the Node’s private member variable
+         * @param x
+         */
+        public Node(String x) {
+                setValue(x);
+                setNext(next);
+        }
 
-    }
+        // Methods 
+        // setters and getters
+        
+        /** setValue(String x)
+         * @param x
+        */
+        public void setValue(String x) {
+                this.value = x;
+        }
 
-    public Node getNext() {
-        return next;
-    }
+        /**
+         * setNext(Node next)
+         * @param next
+        */
+        public void setNext(Node next) {
+                this.next = next;
+        }
 
-    public void setNext(Node next) {
-        this.next = next;
-    }
+        /**
+         * getNext()
+         * 
+         * @return
+        */
+        public Node getNext() {
+                return next;
+        }
 
-    public String getValue() {
-        return value;
-    }
-
-    public void setValue(String value) {
-        this.value = value;
-    }
-
+        /**
+         * getValue()
+         * 
+         * @return
+        */
+        public String getValue() {
+                return value;
+        }
 }
