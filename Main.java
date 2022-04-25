@@ -63,13 +63,20 @@ public class Main {
        // Testing the string generator method
         // String must be between 0 and 10 characters in length
         // String must contain ONLY "(" and ")"
+      
         System.out.println("\nTesting the string generator method:");
-        for (int i = 0; i < 10; i++) {
+        //  for (int i = 0; i < 10; i++) {
 
-        
-           
-         String parenthesisString = parser.getString();
-        }
+  parser.getString();
+     //   String parenthesisString = parser.getString();
+        //   parenthesisString =parenthesisString.replace("(", "");
+        //   parenthesisString = parenthesisString.replace(")", "");
+        //   if(parenthesisString.length() == 0){
+        //     System.out.println(parenthesisString +" TRUE");
+        //   }else{
+        //     System.out.println("FALSE");
+        //   }
+        //  }
             // String must be between 0 and 10 characters in length
             // if (parenthesisString.length() < 0 || parenthesisString.length() > 10) {
             //     System.out.println("False");
