@@ -53,16 +53,20 @@ public class Parser {
 
                 // create string buffer size of strLength
                 StringBuilder sBuilder = new StringBuilder(strLength);
-                for (int i = 0; i < 10; i++) {
+                for (int i = 0; i < strLength; i++) {
 
                         // generate a random string of index
                         int index = (int) (str.length() * Math.random());
                         sBuilder.append(str.charAt(index));
 
-                        String test = sBuilder.toString();
-                        boolean result = check(test);
-                        System.out.println(String.format("%10s: %b", test, result));
+                     
+                        
                 }
+                 String test = sBuilder.toString();
+                        boolean result = check(test);
+                        System.out.println(String.format("%10s: %s", test, result));
+            
+         
                 return sBuilder.toString();
         }
 }
