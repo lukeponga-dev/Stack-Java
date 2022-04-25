@@ -26,14 +26,14 @@ public class Parser {
                         } else if (ch == ')' && !stack.isEmpty()) {
                                 stack.pop();
                         } else if (ch == ')' && scount > 0) {
-                                scount--;
+                                scount --;
                         } else if (ch == ')') {
                                 return false;
                         } else {
-                                scount++;
+                                scount ++;
                                 if (!stack.isEmpty()) {
                                         stack.pop();
-                                        scount++;
+                                        scount ++;
                                 }
                         }
                 }
@@ -62,11 +62,10 @@ public class Parser {
                      
                         
                 }
-                 String test = sBuilder.toString();
-                        boolean result = check(test);
-                        System.out.println(String.format("%10s: %s", test, result));
-            
-         
+                String test = sBuilder.toString();
+                boolean result = check(test);
+                System.out.println(String.format("%10s: %s", test, result));
+
                 return sBuilder.toString();
         }
 }

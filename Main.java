@@ -5,10 +5,10 @@ public class Main {
 
     // Test pushing to stack
     System.out.println("\nTest pushing onto the stack:");
-    // stack.push("apple");
-    // stack.push("b");
-    // stack.push("cat");
-    // stack.dump();
+    stack.push("apple");
+    stack.push("b");
+    stack.push("cat");
+    stack.dump();
 
     // Testing peeking at stack
     System.out.println("\nTest peeking at the top of the stack:");

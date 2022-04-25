@@ -7,16 +7,13 @@
  */
 public class Stack {
 
-        // The head of the stack to be private
+        // The head of the stack
         private Node head;
         
         /**
         * Stack constructor
         */
-
         public Stack() {
-
-                // Initialize head to empty
                 head = null;  
         }
 
@@ -27,18 +24,17 @@ public class Stack {
         */
         public void push(String x) {
                 
-                // create new node with values being x
                 Node newNode = new Node(x);
               
                 // push into an empty stack 
-                // else move stack down & point next newNode to head
-                if(isEmpty()){      
+                if(isEmpty()) {      
                         head = newNode;
-                } else{  
+                        return;
+                } else {  
                         newNode.setNext(head);
                         head = newNode;
+                        return;
                 }
-                return;
         }
 
         /**
@@ -103,7 +99,7 @@ public class Stack {
          * @return, true or false
         */
         public boolean isEmpty() {
-                if (length() == 0){
+                if (length() == 0) {
                         return true;
                 }
                 return false;
