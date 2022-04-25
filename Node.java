@@ -1,3 +1,9 @@
+/** Class Node
+ *  Value Variable to hold string value
+ *  Next Variable to hold link to another node 
+ * A constructor that takes a value as a string and copies that value to the Nodes private variable
+ */
+
 public class Node {
 
         // variables
