@@ -1,71 +1,73 @@
-import java.lang.annotation.Retention;
-import java.util.Random;
-import java.util.Scanner;
-import javax.lang.model.element.Element;
-
+/**
+ * Parser class
+ * 
+ * Parser class has a  method which uses stack class,
+ * to determine if a string is well formated with regards to its parentheses
+ * and a private method getString() which,
+ * generates random strings with random parentheses. to debug the check() method 
+ */
 public class Parser {
+    
+        /**
+            * Check(str) if parentheses are balanced 
+            * @return, return true otherwise false
+        */
+        public boolean check(String str) {
+                
+                // Initilize variables
+                Stack stack = new Stack();
+                int scount = 0;
+                
+                // Traverse the characters in  String str
+                for (char ch : str.toCharArray()) {
+                        if (ch == '(') {
+                             // push the element in the stack
+                             stack.push(str);
 
-    // Public Methods
+                             } else if (ch == ')' && !stack.isEmpty()) {
+                                        stack.pop();
 
-    /**
-     * Check if parentheses are balanced return true otherwise false
-     *
-     * @param s
-     * @return
-     */
-    public boolean check(String str) {
-        // using Stack
-        Stack stack = new Stack();
+                             } else if (ch == ')' && scount > 0) {
+                                        scount--;
 
-        // Initialize count
-        int scount = 0;
+                             } else if (ch == ')') {
+                                        return false;
 
-        // Traversing characters in String
-        for (char c : str.toCharArray()) {
-            if (c == '(') {
-                // push the element in the stack
-                stack.push(str);
-            } else if (c == ')' && !stack.isEmpty()) {
-                stack.pop();
-            } else if (c == ')' && scount > 0) {
-                scount--;
-            } else if (c == ')') {
-                return false;
-            } else {
-                scount++;
-
-                if (!stack.isEmpty()) {
-                    stack.pop();
-                    scount++;
+                             } else {
+                                scount++;
+                                if (!stack.isEmpty()) {
+                                        stack.pop();
+                                        scount++;
+                                }
+                        }
                 }
-            }
-        }
 
-        // Check empty stack
-        return stack.isEmpty();
+                // Check empty stack
+                return stack.isEmpty();
     }
 
-    /**
-     * generate random parentheses strings
-     */
-    public String getString() {
-        String str = "(" + ")";
-        int stringLength = 10;
+        /**
+         * generate random parentheses strings
+         */
+        protected String getString() {
+                
+                // Contains ( & )
+                String str = "()";
+                int stringLength = 10;
 
-        // create string buffer size of n
-        StringBuilder sb = new StringBuilder(stringLength);
+                // create string buffer size of n
+                StringBuilder sb = new StringBuilder(stringLength);
 
-        for (int i = 0; i < stringLength; i++) {
-            // generate a random
-            int index = (int) (str.length() * Math.random());
+                for (int i = 0; i < 10; i++) {
+                            // generate a random
+                            int index = (int) (str.length() * Math.random());
+                            sb.append(str.charAt(index));
+                }
 
-            sb.append(str.charAt(index));
+                String test = sb.toString();
+                boolean result = check(sb.toString());
+                System.out.println(String.format("%.10s : %s", test, result));
+
+                return sb.toString();
         }
-
-        String test = sb.toString();
-        boolean result = check(sb.toString());
-        System.out.println(String.format("%.10s : %s", test, result));
-
-        return sb.toString();
-    }
 }
