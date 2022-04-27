@@ -10,7 +10,7 @@ public class Parser {
 
         /**
          * Check(str) if parentheses are balanced
-         * @return, return true otherwise false
+         * @return true otherwise false
          */
         public boolean check(String str) {
 
@@ -21,6 +21,7 @@ public class Parser {
                 // Traverse the characters in String str
                 for (char ch : str.toCharArray()) {
                         if (ch == '(') {
+                                
                                 // push the element in the stack
                                 stack.push(str);
                         } else if (ch == ')' && !stack.isEmpty()) {

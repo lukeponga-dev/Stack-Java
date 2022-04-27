@@ -17,7 +17,8 @@ public class Node {
 
         // Node Constructor
 
-        /** Node(String x)
+        /** 
+         * Node(String x)
          * takes value as a string argument and
          * copies that value into the Node’s private member variable
          * @param x
@@ -27,10 +28,10 @@ public class Node {
                 setNext(next);
         }
 
-        // Methods 
-        // setters and getters
+        // Methods setters and getters
         
-        /** setValue(String x)
+        /** 
+         * setValue(String x)
          * @param x
         */
         public void setValue(String x) {
@@ -38,6 +39,7 @@ public class Node {
         }
 
         /**
+         * 
          * setNext(Node next)
          * @param next
         */
@@ -47,7 +49,6 @@ public class Node {
 
         /**
          * getNext()
-         * 
          * @return
         */
         public Node getNext() {
@@ -56,7 +57,6 @@ public class Node {
 
         /**
          * getValue()
-         * 
          * @return
         */
         public String getValue() {
