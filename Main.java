@@ -60,102 +60,82 @@ public class Main {
     System.out.println(String.format("%10s : %s", testString6, result6));
     System.out.println(String.format("%10s : %s", testString7, result7));
 
-       // Testing the string generator method
-        // String must be between 0 and 10 characters in length
+    // Testing the string generator method
+    // String must be between 0 and 10 characters in length
+    // String must contain ONLY "(" and ")"
+
+    System.out.println("\nTesting the string generator method:");
+    for (int i = 0; i < 10; i++) {
+      String parenthesisString = parser.getString();
+
+      parenthesisString = parenthesisString.replace("(", "");
+      parenthesisString = parenthesisString.replace(")", "");
+      if (parenthesisString.length() == 0) {
+        System.out.println(parenthesisString + " TRUE");
+      } else {
+        System.out.println("FALSE");
+      }
+      // String must be between 0 and 10 characters in length
+      if (parenthesisString.length() < 0 || parenthesisString.length() > 10) {
+        System.out.println("False");
+      } else {
         // String must contain ONLY "(" and ")"
-      
-        System.out.println("\nTesting the string generator method:");
-          for (int i = 0; i < 10; i++) {
-            String parenthesisString = parser.getString();
-           
-        //   parenthesisString =parenthesisString.replace("(", "");
-        //   parenthesisString = parenthesisString.replace(")", "");
-        //   if(parenthesisString.length() == 0){
-        //     System.out.println(parenthesisString +" TRUE");
-        //   }else{
-        //     System.out.println("FALSE");
-        //   }
-         }
-            // String must be between 0 and 10 characters in length
-            // if (parenthesisString.length() < 0 || parenthesisString.length() > 10) {
-            //     System.out.println("False");
-            // } else {
-            //     // String must contain ONLY "(" and ")"
-            //     parenthesisString = parenthesisString.replace("(", "");
-            //     parenthesisString = parenthesisString.replace(")", "");
-        //         if (parenthesisString.length() == 0) {
-        //             System.out.println("True");
-        //         } else {
-        //           System.out.println("False");
-        //         }
-        //     }
+        parenthesisString = parenthesisString.replace("(", "");
+        parenthesisString = parenthesisString.replace(")", "");
+        if (parenthesisString.length() == 0) {
+          System.out.println("True");
+        } else {
+          System.out.println("False");
         }
-      
-        // int n = 10;
-        // String test1 = parser.getString();
-        // boolean result8 = parser.check(test1);
-        // System.out.println(String.format("%10s : %s", test1, result8));
-        // String test2 = parser.getString();
-        // boolean result9 = parser.check(test2);
-        // System.out.println(String.format("%10s : %s", test2, result9)); 
-        //  String test3 = parser.getString();
-        // boolean result10 = parser.check(test3);
-        // System.out.println(String.format("%10s : %s", test3, result10));
-        // System.out.println(parser.check(parser.getString()));
-        // System.out.println(parser.check(parser.getString(n)));
-        // System.out.println(parser.check(parser.getString(n)));
-        // System.out.println(parser.check(parser.getString(n)));
-        // System.out.println(parser.check(parser.getString()));
-        // System.out.println(parser.check(parser.getString()));
-        // System.out.println(parser.check(parser.getString()));
-    
+      }
+
+      String test = parser.getString();
+      boolean result = parser.check(test);
+      System.out.println(String.format("%10s: %s", test, result));
+    }
   }
-
-    // Expected output:
-    //
-    // Test pushing onto the stack:
-    // cat
-    // b
-    // apple
-    //
-    // Test peeking at the top of the stack:
-    // cat
-    //
-    // Test popping off of the stack:
-    // b
-    // apple
-
-    // Expected output
-    //
-    // Testing the examples given in the assignment specs:
-    // ()() : true
-    // ()()( : false
-    // ))()(( : false
-    //
-    // Testing an empty string
-    // : true
-    //
-    // Testing an additional set of examples:
-    // ((()())()) : true
-    // (((())())) : true
-    // (()(()))) : false
-    //
-    // Testing the string generator method:
-    // True
-    // True
-    // True
-    // True
-    // True
-    // True
-    // True
-    // True
-    // True
-    // True
-
-    // NOTE: you should also use your string generator method (parser.getString())
-    // to test your application
-    // I haven't included a test for that because the strings are generated randomly
-    // This means that any strings I generate will be different to yours, which
-    // means you won't be able to compare the expected output.
-
-  
+}
+// Expected output:
+//
+// Test pushing onto the stack:
+// cat
+// b
+// apple
+//
+// Test peeking at the top of the stack:
+// cat
+//
+// Test popping off of the stack:
+// b
+// apple
+// Expected output
+//
+// Testing the examples given in the assignment specs:
+// ()() : true
+// ()()( : false
+// ))()(( : false
+//
+// Testing an empty string
+// : true
+//
+// Testing an additional set of examples:
+// ((()())()) : true
+// (((())())) : true
+// (()(()))) : false
+//
+// Testing the string generator method:
+// True
+// True
+// True
+// True
+// True
+// True
+// True
+// True
+// True
+// True
+// NOTE: you should also use your string generator method (parser.getString())
+// to test your application
+// I haven't included a test for that because the strings are generated randomly
+// This means that any strings I generate will be different to yours, which
+// means you won't be able to compare the expected output.

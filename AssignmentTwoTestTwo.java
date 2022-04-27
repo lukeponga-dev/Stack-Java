@@ -60,7 +60,6 @@ public class AssignmentTwoTestTwo {
             }
         }
 
-
         // Expected output
         //
         // Testing the examples given in the assignment specs:

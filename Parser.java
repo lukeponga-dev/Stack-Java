@@ -26,14 +26,14 @@ public class Parser {
                         } else if (ch == ')' && !stack.isEmpty()) {
                                 stack.pop();
                         } else if (ch == ')' && scount > 0) {
-                                scount --;
+                                scount--;
                         } else if (ch == ')') {
                                 return false;
                         } else {
-                                scount ++;
+                                scount++;
                                 if (!stack.isEmpty()) {
                                         stack.pop();
-                                        scount ++;
+                                        scount++;
                                 }
                         }
                 }
@@ -43,29 +43,25 @@ public class Parser {
         }
 
         /**
+         * getString
          * generate random parentheses strings
-         */
-        protected String getString() {
-
-                // Contains ( )
-                String str = "()";
-                int strLength = 10;
-
-                // create string buffer size of strLength
-                StringBuilder sBuilder = new StringBuilder(strLength);
-                for (int i = 0; i < strLength; i++) {
-
-                        // generate a random string of index
-                        int index = (int) (str.length() * Math.random());
-                        sBuilder.append(str.charAt(index));
-
-                     
+         * @return generated strings
+        */
+        public String getString() {
+                        String str = "()";
+                        int sLength = 10;
                         
-                }
-                String test = sBuilder.toString();
-                boolean result = check(test);
-                System.out.println(String.format("%10s: %s", test, result));
+                        // create string buffer size of str
+                        StringBuilder sBuilder = new StringBuilder(sLength);
 
-                return sBuilder.toString();
+                        // generate a random number between 0 to str length
+                        for (int i = 0; i < 10; i++) {
+                                        int index = (int) (str.length() * Math.random());
+
+                                        // add character one by one in end of sbuilder
+                                        sBuilder.append(str.charAt(index));
+
+                        }
+                        return sBuilder.toString();
         }
 }
