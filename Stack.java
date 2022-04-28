@@ -58,8 +58,9 @@ public class Stack {
          * @return the head value
          */
         public String peek() {
-                if (!isEmpty())
+                if (!isEmpty()) {
                         return head.getValue();
+                }
                 return null;
         }
 
@@ -86,11 +87,12 @@ public class Stack {
 
         /**
          * isEmpty()
-         * true if length() is 0, false otherwise.
-         * @return, true or false
+         * If Node head is empty
+         * 
+         * @return true else false
          */
         public boolean isEmpty() {
-                if (length() == 0) {
+                if (head == null) {
                         return true;
                 }
                 return false;
