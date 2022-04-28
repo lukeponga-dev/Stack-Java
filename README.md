@@ -41,3 +41,34 @@ debug your check() method.
 A program will be posted on Moodle about a week before the assignment is due. Ensure that
 your classes work with this program as this will be used during marking. 
 </p>
+
+## Removed Code 
+
+   	public int length() {
+          Node currNode = head;
+          int count = 0;
+         // loop to ilterate through the stack
+           while (currNode != null) {
+                            // increment 1 to count
+                            count++;
+
+                           // move to next node
+                           currNode = currNode.getNext();
+            }
+            // return count
+            return count;
+      }
+>
+
+      public void dump(){
+              // loop to iterate through the stack
+               while (sRoot != null) {
+
+                     // Print the data at current node
+                     System.out.println(sRoot.getValue());
+
+                     // go to the next node
+                     sRoot = sRoot.getNext();
+
+                }
+      }

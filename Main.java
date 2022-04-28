@@ -10,15 +10,20 @@ public class Main {
     stack.push("cat");
     stack.dump();
 
+    System.out.println("Length: " + stack.length());
+
     // Testing peeking at stack
     System.out.println("\nTest peeking at the top of the stack:");
     String topValue = stack.peek();
     System.out.println(topValue);
-
     // Test popping from stack
     System.out.println("\nTest popping off of the stack:");
     stack.pop();
     stack.dump();
+
+    System.out.println("\nTest get length of the stack:");
+    stack.length();
+    System.out.println("Length: " + stack.length());
 
     // ########################################################
     // return test two
@@ -75,23 +80,13 @@ public class Main {
       } else {
         System.out.println("FALSE");
       }
-      // String must be between 0 and 10 characters in length
-      if (parenthesisString.length() < 0 || parenthesisString.length() > 10) {
-        System.out.println("False");
-      } else {
-        // String must contain ONLY "(" and ")"
-        parenthesisString = parenthesisString.replace("(", "");
-        parenthesisString = parenthesisString.replace(")", "");
-        if (parenthesisString.length() == 0) {
-          System.out.println("True");
-        } else {
-          System.out.println("False");
-        }
-      }
 
-      String test = parser.getString();
-      boolean result = parser.check(test);
-      System.out.println(String.format("%10s: %s", test, result));
+      // System.out.println(String.format("%10s: %s", test, result));
+
+      // String genString = parser.getString();
+      // boolean gen1 = parser.check(genString);
+
+      // System.out.println("\n" + genString + gen1);
     }
   }
 }
