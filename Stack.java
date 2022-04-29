@@ -1,3 +1,4 @@
+
 /**
  * Stack class
  * 
@@ -27,6 +28,7 @@ public class Stack {
                 */
                 public void push(String x) {
                         Node newNode = new Node(x);
+                        newNode.setValue(x);
                         newNode.setNext(head);
                         head = newNode;
                 }
@@ -35,9 +37,12 @@ public class Stack {
                  * pop()
                  * removes the head node out of the stack.
                  * @return 
+                 * @return 
                 */
-                public void pop() {
+                public String pop() {
+                        String result = head.getValue();
                         head = head.getNext();
+                        return result;
                 }
                
                 /**
@@ -57,18 +62,26 @@ public class Stack {
                  * count the items in stack
                  * @return, int length of items in stack
                  */
-                public int length() {
-                        return lengthR(head);
+                public int length( ) {
+                          return lengthR(1,head);
                 }
 
-                public int lengthR(Node current) {
-                        int count = 0;
-                        while (current != null) {
-                                count++;
-                                current = current.getNext();
+                public int lengthR(int x, Node target)  {
+                                 
+                        if(!isEmpty()){
+                                        return x;
+                                }
+                                if(target.getNext() == null){
+                                        return x;
+                                }
+                                else{
+                                        x++;
+                                        target = target.getNext();
+                                      return  lengthR(x++, target.getNext());
+                                }
+                        
+                        
                         }
-                        return count;
-                }
 
                 /**
                  * isEmpty()

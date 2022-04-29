@@ -8,9 +8,10 @@ public class Main {
     stack.push("apple");
     stack.push("b");
     stack.push("cat");
+   stack.length();
     stack.dump();
+    // System.out.println("Length: " + stack.length());
 
-    System.out.println("Length: " + stack.length());
 
     // Testing peeking at stack
     System.out.println("\nTest peeking at the top of the stack:");
@@ -19,10 +20,11 @@ public class Main {
     // Test popping from stack
     System.out.println("\nTest popping off of the stack:");
     stack.pop();
+    stack.length();
+
     stack.dump();
 
     System.out.println("\nTest get length of the stack:");
-    stack.length();
     System.out.println("Length: " + stack.length());
 
     // ########################################################
