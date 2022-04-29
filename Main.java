@@ -11,6 +11,7 @@ public class Main {
    stack.length();
     stack.dump();
     // System.out.println("Length: " + stack.length());
+    System.out.println("Length: " + stack.length());
 
 
     // Testing peeking at stack

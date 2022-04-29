@@ -51,10 +51,7 @@ public class Stack {
                  * @return the head node in stack
                 */
                 public String peek() {
-                        if (!isEmpty()) {
-                                return head.getValue();
-                        }
-                        return null;      
+                        return head.getValue();
                 }
 
                 /**
@@ -62,27 +59,32 @@ public class Stack {
                  * count the items in stack
                  * @return, int length of items in stack
                  */
-                public int length( ) {
-                          return lengthR(1,head);
-                }
+                // public int length( ) {
+                //           return lengthR(1,head);
+                // }
 
-                public int lengthR(int x, Node target)  {
+                // public int lengthR(int x, Node target)  {
                                  
-                        if(!isEmpty()){
-                                        return x;
-                                }
-                                if(target.getNext() == null){
-                                        return x;
-                                }
-                                else{
-                                        x++;
-                                        target = target.getNext();
-                                      return  lengthR(x++, target.getNext());
-                                }
+                //         if(!isEmpty()){
+                //                         return x;
+                //                 }
+                //                 if(target.getNext() == null){
+                //                         return x;
+                //                 }
+                //                 else{
+                //                         x++;
+                //                         target = target.getNext();
+                //                       return  lengthR(x++, target.getNext());
+                //                 }
                         
                         
-                        }
-
+                //         }
+                private int lengthR(Node from) {
+                        return (from == null) ? 0 : (1 + lengthR(from.getNext()));
+                    }
+                    public int length(){
+                            return lengthR(head);
+                    }
                 /**
                  * isEmpty()
                  * If Node head is empty
